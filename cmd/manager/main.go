@@ -13,6 +13,7 @@ import (
 
 	"github.com/jcrossley3/k-s-o-openshift/pkg/apis"
 	"github.com/jcrossley3/k-s-o-openshift/pkg/controller"
+	"github.com/jcrossley3/k-s-o-openshift/pkg/webhook"
 
 	"github.com/operator-framework/operator-sdk/pkg/k8sutil"
 	kubemetrics "github.com/operator-framework/operator-sdk/pkg/kube-metrics"
@@ -109,6 +110,12 @@ func main() {
 
 	// Setup all Controllers
 	if err := controller.AddToManager(mgr); err != nil {
+		log.Error(err, "")
+		os.Exit(1)
+	}
+
+	// Setup all webhooks
+	if err := webhook.AddToManager(mgr); err != nil {
 		log.Error(err, "")
 		os.Exit(1)
 	}

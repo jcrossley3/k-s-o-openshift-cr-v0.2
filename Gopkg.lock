@@ -178,6 +178,19 @@
   version = "v1.3.2"
 
 [[projects]]
+  digest = "1:4d7cb4a80c941824472da4b52de752882d0403a461c7a2cf1b965156edce126d"
+  name = "github.com/google/go-cmp"
+  packages = [
+    "cmp",
+    "cmp/internal/diff",
+    "cmp/internal/flags",
+    "cmp/internal/function",
+    "cmp/internal/value",
+  ]
+  pruneopts = "NT"
+  revision = "6f77996f0c42f7b84e5a2b252227263f93432e9b"
+
+[[projects]]
   digest = "1:52c5834e2bebac9030c97cc0798ac11c3aa8a39f098aeb419f142533da6cd3cc"
   name = "github.com/google/gofuzz"
   packages = ["."]
@@ -582,12 +595,15 @@
   digest = "1:164cf5e598b8c6525d823644c0ae2d317cff28811de614317192339da281a9ab"
   name = "k8s.io/apimachinery"
   packages = [
+    "pkg/api/equality",
     "pkg/api/errors",
     "pkg/api/meta",
     "pkg/api/resource",
+    "pkg/api/validation",
     "pkg/apis/meta/internalversion",
     "pkg/apis/meta/v1",
     "pkg/apis/meta/v1/unstructured",
+    "pkg/apis/meta/v1/validation",
     "pkg/apis/meta/v1beta1",
     "pkg/conversion",
     "pkg/conversion/queryparams",
@@ -756,6 +772,25 @@
   revision = "8d271d903fe4c290aa361acfb242cff7bcee96f1"
 
 [[projects]]
+  branch = "master"
+  digest = "1:6135f947f1d2e1bdc382e9716e5f650518c07c8862386ced07ddb2fd31575271"
+  name = "knative.dev/pkg"
+  packages = [
+    "apis",
+    "kmp",
+  ]
+  pruneopts = "NT"
+  revision = "e76e90e464c7caa87abdf840d599911ad1fb7b3e"
+
+[[projects]]
+  digest = "1:1243ee715f1a686c96e3a7df36bf7f27e33f292accec975499205e9481e2bf65"
+  name = "knative.dev/serving-operator"
+  packages = ["pkg/apis/serving/v1alpha1"]
+  pruneopts = "NT"
+  revision = "4db51513a748b3b1e15d2f9a2007b5364edbb966"
+  version = "v0.9.0"
+
+[[projects]]
   digest = "1:cc7d4dda9f8c970af917d6767e64db45a9826698a0bb24fb10f564903f0634ba"
   name = "sigs.k8s.io/controller-runtime"
   packages = [
@@ -775,6 +810,7 @@
     "pkg/metrics",
     "pkg/recorder",
     "pkg/runtime/inject",
+    "pkg/runtime/log",
     "pkg/webhook",
     "pkg/webhook/admission",
     "pkg/webhook/internal/certwatcher",
@@ -805,14 +841,20 @@
     "github.com/operator-framework/operator-sdk/version",
     "github.com/spf13/pflag",
     "k8s.io/api/core/v1",
+    "k8s.io/apimachinery/pkg/api/meta",
+    "k8s.io/apimachinery/pkg/apis/meta/v1/unstructured",
     "k8s.io/apimachinery/pkg/runtime",
+    "k8s.io/apimachinery/pkg/runtime/schema",
     "k8s.io/apimachinery/pkg/util/intstr",
     "k8s.io/client-go/plugin/pkg/client/auth",
     "k8s.io/client-go/rest",
+    "knative.dev/serving-operator/pkg/apis/serving/v1alpha1",
+    "sigs.k8s.io/controller-runtime/pkg/client",
     "sigs.k8s.io/controller-runtime/pkg/client/config",
     "sigs.k8s.io/controller-runtime/pkg/log",
     "sigs.k8s.io/controller-runtime/pkg/manager",
     "sigs.k8s.io/controller-runtime/pkg/manager/signals",
+    "sigs.k8s.io/controller-runtime/pkg/runtime/log",
   ]
   solver-name = "gps-cdcl"
   solver-version = 1
