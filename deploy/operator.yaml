@@ -16,10 +16,9 @@ spec:
       containers:
         - name: k-s-o-openshift
           # Replace this with the built image name
-          image: REPLACE_IMAGE
+          image: docker.io/jcrossley3/knative-serving-openshift:dev
           command:
           - k-s-o-openshift
-          imagePullPolicy: Always
           env:
             - name: WATCH_NAMESPACE
               valueFrom:
